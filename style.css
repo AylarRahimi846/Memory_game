@@ -1,0 +1,84 @@
+@keyframes startGame {
+
+    from {
+        transform: translate(-700px);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(20px);
+        opacity: 0;
+    }
+}
+
+h1 {
+    color: #dedede;
+    font-size: 15rem;
+    font-style: italic;
+    animation: startGame;
+    animation-duration: 4s;
+    animation-iteration-count: inherit;
+    animation-direction: normal;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+
+}
+
+
+body {
+    background-image: linear-gradient(#707070,#49014d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+section {
+    display: grid;
+    grid-template: repeat(4, 200px)/ repeat(4, 200px);
+    grid-gap: 4px;
+}
+
+.card {
+    background-color: #c150f7;
+    border-radius: 35px;
+    border:5px solid #49014d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+i {
+    font-size: 3rem;
+    color:black;
+    display: none !important;
+    transform: scaleX(-1);
+    
+}
+
+.show i {
+    display: block !important;
+}
+
+.matched {
+    background-color: green;
+}
+
+.unmatched {
+    background-color: red;
+}
+
+.show {
+    pointer-events: none;
+    transform: scaleX(-1);
+    transition: 400ms;
+    z-index: 0;
+}
+
+.freeze {
+    pointer-events: none;
+}
